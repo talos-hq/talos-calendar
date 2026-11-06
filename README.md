@@ -1,8 +1,9 @@
 # talos-calendar
 
-Time zone helpers and a dependency-free slot picker for booking pages. It ships
-TypeScript source, so use it with a bundler such as Vite.
+Slot computation (Python) plus time zone helpers and a dependency-free slot picker
+(TypeScript source, so use a bundler such as Vite) for booking pages.
 
+- `talos_calendar.slots` (Python, standard library only): bookable starts from weekly hours, overrides, buffers, limits and busy time, DST-safe, for any object with the `Schedule` fields.
 - `talos-calendar/time`: pick, remember and format IANA zones, group UTC slots by local day.
 - `talos-calendar/picker`: `SlotPicker`, a month grid and slot list in the visitor's zone.
 - `talos-calendar/dom`: the small `h()` element helper the picker uses.
@@ -22,4 +23,8 @@ import { SlotPicker } from "talos-calendar/picker";
 import { loadTz } from "talos-calendar/time";
 ```
 
-Develop with `npm ci`, `npm test` and `npm run typecheck`. Tests need Node 22.6 or newer.
+Or pin a commit without a submodule, for example
+`https://github.com/talos-hq/talos-calendar/archive/<commit>.tar.gz` as the npm or pip source.
+
+Develop with `npm ci`, `npm test`, `npm run typecheck` (Node 22.6 or newer) and
+`PYTHONPATH=python python3 -m unittest discover -s test -p "test_*.py"`.
