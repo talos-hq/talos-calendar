@@ -1,0 +1,20 @@
+{
+  "name": "talos-calendar",
+  "version": "0.1.0",
+  "description": "Time zone helpers and a dependency-free slot picker for booking pages.",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "exports": {
+    "./time": "./src/time.ts",
+    "./dom": "./src/dom.ts",
+    "./picker": "./src/picker.ts"
+  },
+  "files": ["src"],
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
